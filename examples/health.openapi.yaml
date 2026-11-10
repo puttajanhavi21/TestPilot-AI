@@ -1,0 +1,44 @@
+openapi: 3.0.3
+info:
+  title: Controlled demo API
+  version: '1.0'
+servers:
+  - url: http://127.0.0.1:8765
+paths:
+  /health:
+    get:
+      summary: Check the demo API health
+      responses:
+        '200':
+          description: Healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [status, version]
+                properties:
+                  status: {type: string, enum: [ok]}
+                  version: {type: string}
+  /echo:
+    post:
+      summary: Validate and echo a name
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: {type: string, minLength: 1}
+      responses:
+        '201':
+          description: Valid name echoed as JSON
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [name]
+                properties:
+                  name: {type: string}
+        '400': {description: Missing, empty, or non-string name; JSON error}

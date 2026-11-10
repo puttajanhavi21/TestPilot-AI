@@ -1,0 +1,24 @@
+TestPilot AI
+
+An AI-powered API testing assistant that turns API descriptions and OpenAPI
+documents into structured, reviewable test cases, executes real bounded HTTP
+checks against authorized APIs, analyzes failures, and produces JSON, PDF, and
+Pytest reports.
+
+Primary AI integration: Adaption SDK (Python), model configured through
+ADAPTION_MODEL. The application validates structured model output with
+Pydantic and never executes model-generated Python.
+
+Workflow:
+Describe -> Generate -> Review -> Execute -> Analyse -> Report
+
+Run locally:
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
+.\venv\Scripts\python.exe app.py
+
+Open http://127.0.0.1:5000
+
+Controlled demo:
+.\venv\Scripts\python.exe demo.py
+
+Repository documentation: README.md
