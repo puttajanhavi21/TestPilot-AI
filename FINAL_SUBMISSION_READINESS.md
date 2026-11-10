@@ -72,13 +72,17 @@ See [ACCEPTANCE_REPORT.md](./ACCEPTANCE_REPORT.md) for the detailed matrix.
 - `.gitignore` excludes `.env`, virtual environments, caches, SQLite files,
   logs, temporary output, generated tests, and reports.
 - `.env.example` contains placeholders only.
-- No remote was configured and nothing was pushed.
-- Files were staged only after the final secret scan; the staged-file list was
-  reviewed before any commit.
-- Current staged set: **39 files**, listed by `git diff --cached --name-status`.
+- The public remote is `https://github.com/puttajanhavi21/TestPilot-AI`.
+- The release commit `41733ca` was pushed to the `main` branch.
+- The staged-file list was reviewed before the first commit; the release
+  contained **39 files**.
+- The working tree is clean and tracks `origin/main`.
 - The secret scan found no high-confidence credential; two regex matches were
   false positives caused by the intentional `Authorization: ******` test
   placeholder.
+- GitHub API verification confirmed the repository is public, `main` is the
+  default branch, `README.md` and `BharatCode.txt` are publicly accessible, and
+  `.env` returns 404.
 
 ## F. Documentation and demo
 
@@ -108,20 +112,14 @@ checked on 2026-11-10. It states:
 Verified locally: the project uses Adaption meaningfully, has a working demo,
 and is being prepared for a public repository. Pending external actions:
 
-1. Create or select the public GitHub repository.
-2. Commit and push the reviewed staged files.
-3. Confirm the repository is public and the default branch contains
-   `BharatCode.txt`.
-4. Submit the project through the BharatCode account.
-5. Confirm any account/team eligibility requirements directly in the
-   submission UI.
+1. Submit the project through the BharatCode account.
+2. Confirm any account/team eligibility requirements directly in the
+    submission UI.
 
 ## H. Final status
 
-**READY AFTER MINOR FIXES**
+**READY TO SUBMIT**
 
-The codebase and local product workflow are ready. Submission is not yet
-complete because publishing a public GitHub repository and submitting the
-entry require the user's explicit account and authorization. No commit or push
-was performed by this audit. The remaining minor action is the external
-GitHub publication/submission step, not a code defect.
+The codebase is published and publicly verified. The remaining action is the
+irreversible BharatCode form submission, which requires the user's explicit
+approval and account interaction.
